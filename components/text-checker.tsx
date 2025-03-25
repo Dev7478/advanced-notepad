@@ -13,13 +13,13 @@ interface TextCheckerProps {
   onApplyCorrection: (newContent: string) => void
 }
 
-interface TextIssue {
+type TextIssue = {
   id: string
-  type: "spelling" | "grammar" | "style"
+  type: "spelling" | "grammar" | "style" | string;
   text: string
   position: { start: number; end: number }
   suggestions: string[]
-  severity: "error" | "warning" | "suggestion"
+  severity: "error" | "warning" | "suggestion" | string;
 }
 
 export function TextChecker({ content, onApplyCorrection }: TextCheckerProps) {

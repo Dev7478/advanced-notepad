@@ -4,4 +4,9 @@ const nextConfig = {
   devIndicators : false,
 };
 
-module.exports = nextConfig;
+module.exports = {
+  eslint: {
+    // Remove any deprecated options
+    dirs:['app','components'], // specify directories to lint
+  },
+}
